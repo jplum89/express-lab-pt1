@@ -1,0 +1,19 @@
+<div *ngIf="cartItems">
+    <ul *ngFor="let cartItem of cartItems">
+        <li>
+            <input placeholer="product" [(ngModel)]="cartItem.product" />
+            <input placeholder="price" [(ngModel)]="cartItem.price" />
+            <input placeholder="quantity" [(ngModel)]="cartItem.quantity" />
+            <button (click)="deleteCartItem(cartItem.id)">delete</button>
+            <button (click)="updateCartItem(cartItem.id, cartItem.product, cartItem.price, cartItem.quantity)">update</button>
+        </li>
+    </ul>
+</div>
+
+<p>Product:</p><input placeholder="Product" type="text" [(ngModel)]="newCartItem.product">
+<p>Price:</p><input placeholder="price" type="number" [(ngModel)]="newCartItem.price">
+<p>Quantity:</p><input placeholder="quantity" type="number" [(ngModel)]="newCartItem.quantity">
+
+<button (click)="addCartItem()">add</button>
+
+
